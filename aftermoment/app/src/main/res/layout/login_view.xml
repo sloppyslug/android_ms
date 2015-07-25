@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center" >
+
+            <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="이메일을 입력하세요"
+            android:text="나와라얍"
+            android:id="@+id/id"
+           />
+
+            <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="비밀번호를 입력하세요"
+            android:id="@+id/password"
+            android:text="이것도 안나오냐"
+            />
+
+            </LinearLayout>
+
+
+        <Button
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:text="로그인"
+        android:id="@+id/login"/>
+
+        </LinearLayout>
+
+        <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 찾기"
+        android:id="@+id/find"/>
+
+
+
+
+
+</LinearLayout>

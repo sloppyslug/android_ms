@@ -1,0 +1,182 @@
+package org.androidtown.mytap.org.androidtown.myStatus;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import org.androidtown.mytap.R;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+
+import java.io.BufferedWriter;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by constant on 15. 7. 13..
+ */
+public class CommentActivity extends Activity {
+
+    private Button backButton;
+    private Button doneButton;
+    private MyEditText commentEdit;
+    private TextView currentText;
+
+    private Intent getIntent;
+
+    private String myImage;
+    private String myComment;
+
+    private String TAG = "MyStatus";
+    private String sendUrl = "http://52.69.116.105:8000/save_current_moment/";
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.comment_view);
+        backButton = (Button) findViewById(R.id.backButton);
+        doneButton = (Button) findViewById(R.id.doneButton);
+        currentText = (TextView) findViewById(R.id.currentText);
+        commentEdit = (MyEditText) findViewById(R.id.commentEdit);
+
+        //이미 저장 되어 있는 값 있으면
+        getIntent = new Intent(getIntent());
+
+        commentEdit.setText(getIntent.getStringExtra("comment"));
+        currentText.setText(String.valueOf(getIntent.getIntExtra("length", 0)) + "자");
+
+        commentEdit.setSelection(commentEdit.length());
+
+        commentEdit.setOnTextLengthListener(new MyEditText.OnTextLengthListener() {
+            @Override
+            public void onTextLength(int length) {
+                currentText.setText(String.valueOf(length) + "자");
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(RESULT_CANCELED);
+                Log.d(TAG, "cancel clicked");
+                finish();
+            }
+
+        });
+
+        doneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String comment = null;
+
+                int myImage = getIntent.getIntExtra("image", 1);
+                if (commentEdit.getText() != null) {
+                    comment = commentEdit.getText().toString();
+                } else {
+                    comment = "";
+                }
+
+                storeStatus(myImage, comment);
+
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("comment", comment);
+                resultIntent.putExtra("length", comment.length());
+
+                Log.d(TAG, "done clicked");
+
+                setResult(RESULT_OK, resultIntent);
+
+
+                finish();
+
+            }
+        });
+
+
+    }
+
+    public void storeStatus(int image, String comment) {
+        //서버로 업로드
+        if (comment == null)
+            comment = "";
+        myImage = String.valueOf(image);
+        myComment = comment;
+        Log.d(TAG, "myImage is : " + myImage + ", myComment is : " + myComment);
+
+        new SendMyComment().execute(sendUrl);
+    }
+
+    class SendMyComment extends AsyncTask<String, Void, Void>
+    {
+        @Override
+        protected Void doInBackground(String... params) {
+            String urlStr = params[0];
+            try {
+                URL url = new URL(urlStr);
+                HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+                conn.setConnectTimeout(10000);
+                conn.setReadTimeout(10000);
+                conn.setRequestMethod("POST");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+
+                List<NameValuePair> nameValue = new ArrayList<NameValuePair>();
+
+                nameValue.add(new BasicNameValuePair("emotion_id", myImage));
+                nameValue.add(new BasicNameValuePair("comment", myComment));
+
+                OutputStream os = conn.getOutputStream();
+
+                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+
+                writer.write(getQuery(nameValue));
+                writer.flush();
+                writer.close();
+                os.close();
+                conn.connect();
+                int code = conn.getResponseCode();
+                Log.v(TAG, "process code : " + code);
+                switch(code){
+                    case 200 :
+                        Log.d(TAG, "Success data transmit");
+                        break;
+                    default :
+                        Log.d(TAG, "Fail data transmit");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+        private String getQuery(List<NameValuePair> params) throws UnsupportedEncodingException
+        {
+            StringBuilder result = new StringBuilder();
+            boolean first = true;
+
+            for (NameValuePair pair : params)
+            {
+                if (first)
+                    first = false;
+                else
+                    result.append("&");
+
+                result.append(URLEncoder.encode(pair.getName(), "UTF-8"));
+                result.append("=");
+                result.append(URLEncoder.encode(pair.getValue(), "UTF-8"));
+            }
+            return result.toString();
+        }
+    }
+}

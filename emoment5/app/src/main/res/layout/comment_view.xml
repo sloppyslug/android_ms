@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/upBar"
+        >
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/back_selector"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"/>
+        <Button
+            android:id="@+id/doneButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/done_selector"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"/>
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="오늘의 기분은 어떠세요?"
+        android:textSize="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/editLayout"
+        android:layout_alignStart="@+id/editLayout"
+        android:layout_marginTop="52dp" />
+
+    <RelativeLayout
+        android:id="@+id/editLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" >
+
+        <org.androidtown.mytap.org.androidtown.myStatus.MyEditText
+            android:id="@+id/commentEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="39dp"
+            android:inputType="none"
+            android:maxLength="50"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/editLayout"
+        android:layout_alignRight="@+id/editLayout"
+        android:layout_alignEnd="@+id/editLayout">
+        <TextView
+            android:id="@+id/currentText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/text50" />
+
+        <TextView
+            android:id="@+id/text50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text=" /50자"/>
+    </RelativeLayout>
+
+</RelativeLayout>

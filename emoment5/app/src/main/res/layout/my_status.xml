@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#ffffffff">
+
+
+    <org.androidtown.mytap.org.androidtown.myStatus.PickerView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/pickerView"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="48dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/pickerView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp">
+
+            <TextView
+                android:id="@+id/commentText"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:textSize="15dp"
+                android:gravity="center_vertical"
+                android:hint="오늘 기분은 어떠세요?"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

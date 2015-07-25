@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="#ffffffff">
+
+
+    <org.androidtown.mytap.PickerView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/pickerView"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="48dp" />
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/pickerView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp">
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:hint="Write comment"
+            android:inputType="text"
+            android:layout_marginLeft="51dp"
+            android:layout_marginRight="51dp"
+            android:layout_marginStart="70dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="저장!"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/pickerView"
+        android:layout_alignStart="@+id/pickerView"
+        android:layout_alignRight="@+id/pickerView"
+        android:layout_alignEnd="@+id/pickerView" />
+</RelativeLayout>

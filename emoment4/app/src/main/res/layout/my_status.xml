@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#ffffffff">
+
+
+    <org.androidtown.mytap.org.androidtown.myStatus.PickerView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/pickerView"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="48dp" />
+
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/pickerView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="코멘트 작성"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:background="#ffffffff"
+                android:layout_marginLeft="51dp"
+                android:layout_marginRight="51dp"
+                android:layout_marginStart="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="저장!"
+            android:id="@+id/button"
+            android:layout_marginBottom="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="51dp"
+            android:layout_marginRight="51dp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
