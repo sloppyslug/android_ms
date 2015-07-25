@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="classes3">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/facebook-android-sdk-4.4.1/AudienceNetwork/samples/NativeAdSample/build/intermediates/exploded-aar/android-sdk/ads/unspecified/classes.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

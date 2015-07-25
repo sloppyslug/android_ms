@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="AudienceNetwork">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/facebook-android-sdk-4.4.1/AudienceNetwork/samples/NativeAdSample/libs/AudienceNetwork.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
