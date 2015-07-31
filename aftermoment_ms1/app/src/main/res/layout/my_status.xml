@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#ffffffff">
+    
+    <ImageView
+        android:id="@+id/mainImage"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/main"/>
+
+
+    <org.androidtown.mytap.org.androidtown.myStatus.newPicker.WheelVerticalView
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_below="@+id/mainImage"
+        android:id="@+id/pickerView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/pickerView"
+        android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/commentText"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:textSize="15dp"
+                android:textColor="#ffdae000"
+                android:gravity="center_vertical"
+                android:hint="오늘 기분은 어떠세요?"
+                android:background="@drawable/text_view_back"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
