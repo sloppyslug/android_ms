@@ -5,25 +5,45 @@
     android:background="#ffffff">
 
          <LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:gravity="center"
-         android:layout_weight="4">
-
-
-         <ImageView
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:src="@drawable/first"/>
+         android:orientation="horizontal"
+         android:paddingTop="5dp"
+         android:paddingLeft="5dp"
+         android:paddingRight="5dp">
 
-         </LinearLayout>
+             <Button
+                 android:layout_width="100dp"
+                 android:layout_height="60dp"
+                 android:id="@+id/back_button"
+                 android:src="@drawable/back"
+                 android:background="@drawable/back_selector"/>
+
+             <View
+                 android:layout_width="0dp"
+                 android:layout_height="0dp"
+                 android:layout_weight="1"
+                 />
+
+             <Button
+               android:layout_width="100dp"
+               android:layout_height="60dp"
+               android:id="@+id/done_Button"
+               android:background="@drawable/done_selector"
+               />
+
+
+
+
+             </LinearLayout>
 
             <LinearLayout
+            android:paddingTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="6">
 
             <EditText
             android:layout_width="300dp"
@@ -39,26 +59,11 @@
             />
 
 
-
-
               <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="match_parent"
-               android:gravity="center"
-               android:layout_weight="5"
+               android:layout_weight="1"
                  >
-
-                <Button
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/login"
-                android:text="로그인"
-                />
-                <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/make_admin2"
-                android:text="회원가입" />
 
 
                 </LinearLayout>

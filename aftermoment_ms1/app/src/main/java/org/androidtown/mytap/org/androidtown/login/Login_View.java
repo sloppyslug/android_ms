@@ -40,16 +40,15 @@ import java.util.ArrayList;
 public class Login_View extends Activity {
 
     private Button login;
-    private Button make_admin2;
+    private Button back;
 
     protected void onCreate(Bundle saveInstanceState) {
 
         super.onCreate(saveInstanceState);
         setContentView(R.layout.login_view);
 
-
-        login = (Button) findViewById(R.id.login);
-        make_admin2 = (Button) findViewById(R.id.make_admin2);
+        login = (Button) findViewById(R.id.done_Button);
+        back = (Button) findViewById(R.id.back_button);
 
         final EditText id_edit = (EditText) findViewById(R.id.email);
         final EditText password_edit = (EditText) findViewById(R.id.password);
@@ -65,7 +64,8 @@ public class Login_View extends Activity {
                 String password = password_edit.getText().toString();
                 if (id.equals("user") && password.equals("users"))
 
-                {       Intent intent = new Intent();
+                 {  Intent i = new Intent(Login_View.this, MainActivity.class);
+                     startActivity(i);
 
 
                 } else {
@@ -79,6 +79,17 @@ public class Login_View extends Activity {
 
         });
 
+        back.setOnClickListener(new View.OnClickListener()
+
+        {@Override
+
+         public void onClick(View v)
+
+            { finish();
+
+
+            };
+
 
 
 
@@ -88,11 +99,13 @@ public class Login_View extends Activity {
                                 public void onClick(View v) {
                                         String comment = null; */
 
-    }
+    });
 
 
 
+ }
 }
+
 
 
 

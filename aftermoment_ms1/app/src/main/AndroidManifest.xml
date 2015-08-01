@@ -16,13 +16,18 @@
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".org.androidtown.myStatus.CommentActivity"
+        <activity
+            android:name=".org.androidtown.myStatus.CommentActivity"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysVisible"
             android:screenOrientation="portrait">
 
         </activity>
         <activity android:name=".org.androidtown.login.Login_View"
+            android:theme="@android:style/Theme.NoTitleBar">
+
+        </activity>
+        <activity android:name=".org.androidtown.login.Make_admin"
             android:theme="@android:style/Theme.NoTitleBar">
 
         </activity>
