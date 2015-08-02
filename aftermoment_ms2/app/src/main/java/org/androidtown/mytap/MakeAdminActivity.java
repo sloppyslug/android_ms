@@ -33,4 +33,13 @@ public class MakeAdminActivity extends Activity {
 
              });
         }
+
+         @Override
+            public void onBackPressed(){
+            Intent intent = new Intent(MakeAdminActivity.this, FirstActivity.class);
+            startActivity(intent);
+
+            finish();
+            super.onBackPressed();
+    }
 }
