@@ -80,7 +80,7 @@ public class LoginActivity extends Activity {
 
     }
              @Override
-              /*이 메소도는 이 화면에서 뒤로가기 버튼 즉 back버튼이 아니라 휴대폰의 뒤로가기 버튼을 눌렀을때 바로 종료 되는 것을 막는 메소드야*/
+              /*이 메소도는 이 화면에서 뒤로가기 버튼 즉 back버튼이 아니라 휴대폰의 뒤로가기 버튼을 눌렀을때 바로 종료 되는 것을 막는 메소드*/
              public void onBackPressed(){
              Intent intent = new Intent(LoginActivity.this, FirstActivity.class);
               startActivity(intent);

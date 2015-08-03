@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/upBar"
+        android:layout_marginTop="30dp"
+        >
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="60dp"
+            android:layout_height="34dp"
+            android:background="@drawable/back_selector"
+            android:layout_marginLeft="29dp"
+            android:layout_centerVertical="true"/>
+        <Button
+            android:id="@+id/doneButton"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:background="@drawable/done_selector"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="29dp"
+            android:layout_centerVertical="true"/>
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="29dp"
+        android:text="What happened? You can write here!"
+        android:textSize="18dp"
+        android:textColor="#dae800"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp" />
+
+    <RelativeLayout
+        android:id="@+id/editLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" >
+
+        <org.androidtown.mytap.org.androidtown.myStatus.MyEditText
+            android:id="@+id/commentEdit"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:inputType="none"
+            android:maxLength="50"
+            android:textColor="#dae800"
+            android:background="@drawable/text_view_back"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/editLayout"
+        android:layout_alignRight="@+id/editLayout"
+        android:layout_alignEnd="@+id/editLayout">
+        <TextView
+            android:id="@+id/currentText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/text50"
+            android:textSize="14dp"
+            android:textColor="#dae800"
+            />
+
+        <TextView
+            android:id="@+id/text50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text=" /50자"
+            android:textSize="14dp"
+            android:textColor="#dae800"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
