@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff">
+
+    
+    <ImageView
+        android:id="@+id/imagev"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/flower1"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:id="@+id/nameBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/imagev"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:text="이름"
+            android:textColor="@color/text1"
+            android:textSize="20dp"
+            android:gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/nameInput"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/t1"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/text2"
+            android:textSize="20dp"
+            android:gravity="center_vertical"/>
+    </RelativeLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/myFriend"
+        android:background="@drawable/myfriend_selector"
+        android:layout_below="@+id/nameBar"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/logoutButton"
+        android:background="@drawable/logout_selector"
+        android:layout_below="@id/myFriend"
+         />
+
+    <TextView
+        android:id="@+id/textV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoutButton"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/text1"
+        android:text="로그아웃 버튼을 누르면, 첫 화면으로 이동합니다 :)"/>
+</RelativeLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/flower2"
+        android:layout_gravity="center_horizontal" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout">
+
+        <Button
+            android:id="@+id/preButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/left"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/textView"
+            android:layout_toStartOf="@+id/textView" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/text2"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            tools:text="Month"/>
+        <Button
+            android:id="@+id/toButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/right"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_toEndOf="@+id/textView" />
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:id="@+id/dayBar"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        >
+
+        <GridView
+            android:id="@+id/dayView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:listSelector="#ffffffff"
+            android:numColumns="7"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="2dp"
+            android:horizontalSpacing="2dp">
+            </GridView>
+    </RelativeLayout>
+
+
+
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:numColumns="7"
+        android:isScrollContainer="false"
+        android:verticalSpacing="2dp"
+        android:horizontalSpacing="2dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:layout_below="@+id/dayBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true" />
+
+</LinearLayout>

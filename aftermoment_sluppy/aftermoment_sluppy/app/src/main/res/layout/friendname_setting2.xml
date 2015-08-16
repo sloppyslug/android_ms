@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/relativeLayout4"
+        android:layout_marginTop="10dp">
+
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            tool:text="name"
+            android:gravity="left|center"
+            android:textSize="20dp"
+            android:textColor="@color/text2"
+            android:layout_marginLeft="20dp"
+            />
+
+        <Button
+            android:id="@+id/admitButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/accept"
+            android:gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toLeftOf="@+id/rejectButton"/>
+
+        <Button
+            android:id="@+id/rejectButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/delete"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

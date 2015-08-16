@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/upBar"
+        android:layout_marginTop="30dp"
+        >
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@drawable/back_selector"
+            android:layout_marginLeft="29dp"
+            android:layout_centerVertical="true"/>
+        <Button
+            android:id="@+id/searchFriendButton"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@drawable/plus_selector"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="29dp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/downBar"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/upBar"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/listView"
+            android:layout_alignParentLeft="true"/>
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:dividerHeight="1dp"
+            android:divider="@color/text1"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+
+        </ListView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/listView"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

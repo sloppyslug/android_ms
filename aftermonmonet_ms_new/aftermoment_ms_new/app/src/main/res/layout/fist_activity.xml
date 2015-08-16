@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <ImageView
+        android:id="@+id/firstImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="38dp"
+        android:src="@drawable/first"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/progress"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/login_selector"
+        android:textSize="20dp"
+
+        android:textColor="#FFFFFFFF"
+        android:id="@+id/loginButton"
+        android:layout_marginBottom="135dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/signin_selector"
+        android:textSize="20dp"
+        android:textColor="#FFFFFFFF"
+        android:id="@+id/signinButton"
+        android:layout_marginTop="60dp"
+        android:layout_alignTop="@+id/loginButton"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

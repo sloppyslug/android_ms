@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:src="@drawable/back"
+            android:id="@+id/backButton"/>
+        <EditText
+            android:id="@+id/searchText"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/backButton"/>
+        <ImageButton
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/searchText"
+            android:layout_toEndOf="@+id/searchText" />
+
+
+</RelativeLayout>
+
+    <ListView
+        android:id="@+id/requestFriend"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/backButton"
+        android:layout_weight="3">
+
+
+    </ListView>
+
+    <ListView
+        android:id="@+id/searchFriend"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/requestFriend"
+        android:layout_weight="3">
+
+    </ListView>
+
+</LinearLayout>
